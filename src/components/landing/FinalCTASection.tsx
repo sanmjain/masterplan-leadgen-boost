@@ -80,62 +80,49 @@ const FinalCTASection = () => {
                 Secure Your Spot Now - FREE Consultation
               </h3>
               
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form method="post" action="https://systeme.io/embedded/32634344/subscription" className="space-y-4">
                 <div>
-                  <Label htmlFor="final-name" className="sr-only">Full Name</Label>
-                  <Input
-                    id="final-name"
+                  <Label htmlFor="final-surname" className="sr-only">Full Name</Label>
+                  <input
                     type="text"
+                    name="surname"
+                    id="final-surname"
                     placeholder="Your Full Name *"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="h-12 bg-white/20 border-white/30 text-white placeholder:text-gray-300"
+                    required
+                    className="w-full h-12 bg-white/20 border border-white/30 text-white placeholder:text-gray-300 rounded-md px-3"
                   />
                 </div>
                 <div>
                   <Label htmlFor="final-email" className="sr-only">Email</Label>
-                  <Input
-                    id="final-email"
+                  <input
                     type="email"
+                    name="email"
+                    id="final-email"
                     placeholder="Your Email Address *"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="h-12 bg-white/20 border-white/30 text-white placeholder:text-gray-300"
+                    required
+                    className="w-full h-12 bg-white/20 border border-white/30 text-white placeholder:text-gray-300 rounded-md px-3"
                   />
                 </div>
                 <div>
                   <Label htmlFor="final-phone" className="sr-only">Phone</Label>
-                  <Input
-                    id="final-phone"
+                  <input
                     type="tel"
+                    name="phone_number"
+                    id="final-phone"
                     placeholder="Your Phone Number *"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="h-12 bg-white/20 border-white/30 text-white placeholder:text-gray-300"
+                    required
+                    className="w-full h-12 bg-white/20 border border-white/30 text-white placeholder:text-gray-300 rounded-md px-3"
                   />
                 </div>
-                <div>
-                  <Label htmlFor="final-time" className="sr-only">Preferred Call Time</Label>
-                  <select
-                    id="final-time"
-                    value={formData.preferredTime}
-                    onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
-                    className="w-full h-12 bg-white/20 border border-white/30 text-white rounded-md px-3"
-                  >
-                    <option value="" className="text-gray-800">Preferred Call Time (Optional)</option>
-                    <option value="morning" className="text-gray-800">Morning (9AM-12PM)</option>
-                    <option value="afternoon" className="text-gray-800">Afternoon (12PM-5PM)</option>
-                    <option value="evening" className="text-gray-800">Evening (5PM-8PM)</option>
-                  </select>
-                </div>
                 
-                <Button 
-                  type="submit"
-                  size="lg"
-                  className="w-full h-14 text-lg font-bold bg-gradient-accent hover:shadow-glow transition-all duration-300 transform hover:scale-105"
-                >
-                  🚀 YES! START MY TRANSFORMATION
-                </Button>
+                <div className="f-row">
+                  <button 
+                    type="submit"
+                    className="w-full h-14 text-lg font-bold bg-gradient-accent hover:shadow-glow transition-all duration-300 transform hover:scale-105 rounded-md text-white btn"
+                  >
+                    🚀 YES! START MY TRANSFORMATION
+                  </button>
+                </div>
               </form>
               
               <p className="text-xs text-gray-400 mt-4">

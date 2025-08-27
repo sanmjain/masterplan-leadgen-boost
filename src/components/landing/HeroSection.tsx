@@ -61,47 +61,48 @@ const HeroSection = () => {
 
         {/* Lead Capture Form */}
         <div className="max-w-md mx-auto mb-8">
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form method="post" action="https://systeme.io/embedded/32634344/subscription" className="space-y-4">
             <div>
-              <Label htmlFor="name" className="sr-only">Full Name</Label>
-              <Input
-                id="name"
+              <Label htmlFor="surname" className="sr-only">Full Name</Label>
+              <input
                 type="text"
+                name="surname"
+                id="surname"
                 placeholder="Your Full Name"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="h-12 text-center bg-white/10 border-white/20 text-white placeholder:text-gray-300 backdrop-blur-sm"
+                required
+                className="w-full h-12 text-center bg-white/10 border border-white/20 text-white placeholder:text-gray-300 backdrop-blur-sm rounded-md px-3"
               />
             </div>
             <div>
               <Label htmlFor="email" className="sr-only">Email</Label>
-              <Input
-                id="email"
+              <input
                 type="email"
+                name="email"
+                id="email"
                 placeholder="Your Email Address"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="h-12 text-center bg-white/10 border-white/20 text-white placeholder:text-gray-300 backdrop-blur-sm"
+                required
+                className="w-full h-12 text-center bg-white/10 border border-white/20 text-white placeholder:text-gray-300 backdrop-blur-sm rounded-md px-3"
               />
             </div>
             <div>
-              <Label htmlFor="phone" className="sr-only">Phone</Label>
-              <Input
-                id="phone"
+              <Label htmlFor="phone_number" className="sr-only">Phone</Label>
+              <input
                 type="tel"
+                name="phone_number"
+                id="phone_number"
                 placeholder="Your Phone Number"
-                value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="h-12 text-center bg-white/10 border-white/20 text-white placeholder:text-gray-300 backdrop-blur-sm"
+                required
+                className="w-full h-12 text-center bg-white/10 border border-white/20 text-white placeholder:text-gray-300 backdrop-blur-sm rounded-md px-3"
               />
             </div>
-            <Button 
-              type="submit"
-              size="lg"
-              className="w-full h-14 text-lg font-bold bg-gradient-accent hover:shadow-glow transition-all duration-300 transform hover:scale-105"
-            >
-              🔥 CLAIM YOUR TRANSFORMATION SPOT
-            </Button>
+            <div className="f-row">
+              <button 
+                type="submit"
+                className="w-full h-14 text-lg font-bold bg-gradient-accent hover:shadow-glow transition-all duration-300 transform hover:scale-105 rounded-md text-white btn"
+              >
+                🔥 CLAIM YOUR TRANSFORMATION SPOT
+              </button>
+            </div>
           </form>
         </div>
 
