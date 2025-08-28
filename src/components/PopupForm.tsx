@@ -14,14 +14,37 @@ const PopupForm = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // Handle escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsVisible(false);
+      }
+    };
+
+    if (isVisible) {
+      document.addEventListener('keydown', handleEscape);
+      return () => document.removeEventListener('keydown', handleEscape);
+    }
+  }, [isVisible]);
+
   const handleClose = () => {
     setIsVisible(false);
+  };
+
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      handleClose();
+    }
   };
 
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+      onClick={handleBackdropClick}
+    >
       <div className="relative bg-gradient-hero rounded-lg border border-white/20 shadow-2xl max-w-md w-full animate-scale-in">
         <div className="absolute inset-0 bg-black/40 rounded-lg"></div>
         
